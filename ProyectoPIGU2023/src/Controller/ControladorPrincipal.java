@@ -23,7 +23,10 @@ public class ControladorPrincipal implements ActionListener, MouseListener{
     public ControladorPrincipal(principal db) {
         this.db = db;
         this.db.btn_Aceptar.addActionListener(this);
+        this.db.btn_Actualizar.addActionListener(this);
+        this.db.btn_Eliminar.addActionListener(this);
         this.db.btn_cancelar.addActionListener(this);  
+        this.db.btn_Exportar.addActionListener(this);
         this.db.tblElementos.addMouseListener(this);
         edb.setDatos(db);
         db.ilbd.setText(""+edb.lastItemList());
@@ -46,6 +49,22 @@ public class ControladorPrincipal implements ActionListener, MouseListener{
 
         }else if(e.getSource() == db.btn_cancelar){
            edb.LimpiarCampos(db);
+           
+        }else if(e.getSource() == db.btn_Eliminar){
+                 edb.removeRow(filaActual);
+                 edb.setDatos(db);
+        }else if(e.getSource() == db.btn_Actualizar){
+            edb.Actualizar(filaActual, db);
+            
+        }else if(e.getSource() == db.btn_Exportar){
+               if(edb.ExportarInfo()){
+                   JOptionPane.showMessageDialog(db, "Se creo correctamente");
+                   db.Exportar.setLocation(200,0);
+                   db.Exportar.setSize(800, 600);
+                   db.Exportar.setVisible(true);
+               }else{
+                   JOptionPane.showMessageDialog(db, "Error.. Verifique.");
+               }
         }
     }
 

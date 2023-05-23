@@ -4,6 +4,7 @@
  */
 package Views;
 
+import Controller.ControladorFrameExportar;
 import Controller.ControladorPrincipal;
 
 
@@ -19,7 +20,7 @@ public class principal extends javax.swing.JFrame {
         this.txt_id.setText(""+(Integer.parseInt(this.ilbd.getText())+1));
         this.ilbd.setVisible(false);
         this.txt_Nombre.requestFocus(true);
-        this.txt_Nombre.requestFocus(true);
+        ControladorFrameExportar frc = new ControladorFrameExportar(this);
     }
 
     /**
@@ -49,9 +50,12 @@ public class principal extends javax.swing.JFrame {
         txt_Nombre = new javax.swing.JTextField();
         btn_cancelar = new javax.swing.JButton();
         btn_Aceptar = new javax.swing.JButton();
+        btn_Eliminar = new javax.swing.JButton();
+        btn_Actualizar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblElementos = new javax.swing.JTable();
         ilbd = new javax.swing.JLabel();
+        btn_Exportar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         txt_masa = new javax.swing.JTextField();
         txt_simbolo = new javax.swing.JTextField();
@@ -69,32 +73,30 @@ public class principal extends javax.swing.JFrame {
         textArea.setRows(5);
         jScrollPane2.setViewportView(textArea);
 
-        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 102, 530, 330));
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 620, 330));
 
         jLabel6.setText("Nombre del Archivo: ");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 120, 30));
-        jPanel2.add(txt_nombreArchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 410, 40));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 120, 30));
+        jPanel2.add(txt_nombreArchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 380, 410, 40));
 
         btn_GuardarArchivo.setText("Guardar");
-        jPanel2.add(btn_GuardarArchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 430, 120, 40));
+        jPanel2.add(btn_GuardarArchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 120, 120, 40));
 
         btn_BuscarArchivos.setText("Buscar Archivo");
-        jPanel2.add(btn_BuscarArchivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 190, 40));
+        jPanel2.add(btn_BuscarArchivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 380, 190, 40));
 
-        btn_elinarArchivo.setText("Elimnar");
-        jPanel2.add(btn_elinarArchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 120, 40));
+        btn_elinarArchivo.setText("Eliminar");
+        jPanel2.add(btn_elinarArchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 170, 120, 40));
 
         javax.swing.GroupLayout ExportarLayout = new javax.swing.GroupLayout(Exportar.getContentPane());
         Exportar.getContentPane().setLayout(ExportarLayout);
         ExportarLayout.setHorizontalGroup(
             ExportarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 751, Short.MAX_VALUE)
         );
         ExportarLayout.setVerticalGroup(
             ExportarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ExportarLayout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -116,10 +118,16 @@ public class principal extends javax.swing.JFrame {
         getContentPane().add(txt_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 100, -1));
 
         btn_cancelar.setText("Cancelar");
-        getContentPane().add(btn_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 150, -1, -1));
+        getContentPane().add(btn_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 80, -1, -1));
 
         btn_Aceptar.setText("Aceptar");
-        getContentPane().add(btn_Aceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 150, -1, -1));
+        getContentPane().add(btn_Aceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 120, 80, -1));
+
+        btn_Eliminar.setText("Eliminar");
+        getContentPane().add(btn_Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 80, 90, -1));
+
+        btn_Actualizar.setText("Actualizar");
+        getContentPane().add(btn_Actualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 120, -1, -1));
 
         tblElementos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -139,13 +147,19 @@ public class principal extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblElementos);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 192, 790, 271));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 192, 940, 271));
         getContentPane().add(ilbd, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 73, 74, 22));
+
+        btn_Exportar.setText("Exportar ");
+        btn_Exportar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ExportarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_Exportar, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 80, -1, -1));
 
         jLabel5.setText("Masa Atomica: ");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, -1, -1));
-
-        txt_masa.setText("0.0");
         getContentPane().add(txt_masa, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, 80, -1));
         getContentPane().add(txt_simbolo, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, 80, -1));
 
@@ -158,12 +172,14 @@ public class principal extends javax.swing.JFrame {
 
         jLabel9.setText("Num. Atomico: ");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, -1, -1));
-
-        txt_numAtom.setText("0");
         getContentPane().add(txt_numAtom, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 110, 80, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_ExportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ExportarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_ExportarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,7 +220,10 @@ public class principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JFrame Exportar;
     public javax.swing.JButton btn_Aceptar;
+    public javax.swing.JButton btn_Actualizar;
     public javax.swing.JButton btn_BuscarArchivos;
+    public javax.swing.JButton btn_Eliminar;
+    public javax.swing.JButton btn_Exportar;
     public javax.swing.JButton btn_GuardarArchivo;
     public javax.swing.JButton btn_cancelar;
     public javax.swing.JButton btn_elinarArchivo;

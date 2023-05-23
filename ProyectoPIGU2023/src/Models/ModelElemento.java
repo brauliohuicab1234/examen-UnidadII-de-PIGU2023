@@ -78,6 +78,44 @@ public class ModelElemento {
             i = i - 1;
         }
     }
+    public boolean ExportarInfo() {
+        String ruta = System.getProperty("user.home");
+        String url = ruta+"\\OneDrive\\Escritorio\\tblElementosQumicosMatricula.txt";
+        System.out.println("Inico guardar archivo");
+        File archivo = new File(url);
+        PrintWriter escribir;
+        try {
+            escribir = new PrintWriter(archivo);
+            for (ElementoQuimicoDTO quimico : elementos) {
+                escribir.print("ID: "+quimico.getId()+ "  ");
+                escribir.print("Num. Atomico: "+quimico.getNúmero_atómico()+ "  ");
+                escribir.print("Masa Atomica: "+quimico.getMasa_atómica()+ "  ");
+                escribir.print("Nombre: "+quimico.getNombre() + "  ");
+                escribir.print("Simbolo: "+quimico.getSímbolo_químico()+ "  ");
+                escribir.print("Color: "+quimico.getColor()+ "\n\n");
+            }
+            escribir.close();
+            return true;
+        } catch (FileNotFoundException ex) {
+            System.out.println("Error en crear archivo "+ex.getMessage());
+            return false;
+        }
+    }
+    
+    public void Actualizar(int filaActual, principal db){
+        if (filaActual != -1){
+            db.txt_recNo.setText(""+db.tblElementos.getValueAt(filaActual, 0));
+            db.txt_id.setText("" + db.tblElementos.getValueAt(filaActual, 1));
+            db.txt_numAtom.setText("" + db.tblElementos.getValueAt(filaActual, 2));
+            db.txt_Nombre.setText("" + db.tblElementos.getValueAt(filaActual, 3));
+            db.txt_masa.setText("" + db.tblElementos.getValueAt(filaActual, 4));
+            db.txt_simbolo.setText("" + db.tblElementos.getValueAt(filaActual, 5));
+            db.txt_color.setText("" + db.tblElementos.getValueAt(filaActual, 6));
+
+        }else{
+            System.out.println("Es necesario Seleccionar un registro");
+        }
+    }
     
     public void removeRow(int filaActual){
         if (filaActual != -1){
