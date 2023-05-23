@@ -4,6 +4,8 @@
  */
 package proyectopigu2023;
 
+import Views.principal;
+
 public class ProyectoPIGU2023 {
 
     /**
@@ -11,6 +13,7 @@ public class ProyectoPIGU2023 {
      */
     public static void main(String[] args) {
         System.out.println(Braulio63913());
+        imprimirElementos();
     }
     
     public static String Braulio63913(){
@@ -18,6 +21,23 @@ public class ProyectoPIGU2023 {
         String apellido = "Huicab May";
         String Carrera = "Ingenieria en Sistemas Computacionales";
         return "Soy el Alumno "+nombre +apellido +" y estudio la carrera: "+Carrera ;
+    }
+    
+    public static void imprimirElementos(){
+        principal mn = new principal();
+        mn.txt_elemntos.setText("LITIO\n"
+                + "ALUMINIO\n"
+                + "VANADIO\n"
+                + "ARSENICO\n"
+                + "TECNECIO\n"
+                + "YODO\n"
+                + "EUROPIO\n"
+                + "TATALIO\n"
+                + "BISMUTO\n"
+                + "NEPTUNIO\n"
+                + "LAURENCIO\n"
+                + "UNUNBLUM");
+        mn.setVisible(true);
     }
     
 }
