@@ -25,18 +25,18 @@ public class ProyectoPIGU2023 {
     
     public static void imprimirElementos(){
         principal mn = new principal();
-        mn.txt_elemntos.setText("LITIO\n"
-                + "ALUMINIO\n"
-                + "VANADIO\n"
-                + "ARSENICO\n"
-                + "TECNECIO\n"
-                + "YODO\n"
-                + "EUROPIO\n"
-                + "TATALIO\n"
-                + "BISMUTO\n"
-                + "NEPTUNIO\n"
-                + "LAURENCIO\n"
-                + "UNUNBLUM");
+//        mn.txt_elemntos.setText("LITIO\n"
+//                + "ALUMINIO\n"
+//                + "VANADIO\n"
+//                + "ARSENICO\n"
+//                + "TECNECIO\n"
+//                + "YODO\n"
+//                + "EUROPIO\n"
+//                + "TATALIO\n"
+//                + "BISMUTO\n"
+//                + "NEPTUNIO\n"
+//                + "LAURENCIO\n"
+//                + "UNUNBLUM");
         mn.setVisible(true);
     }
     

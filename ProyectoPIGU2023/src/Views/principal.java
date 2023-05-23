@@ -3,13 +3,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Views;
+
+import Controller.ControladorPrincipal;
+
+
 public class principal extends javax.swing.JFrame {
 
     /**
-     * Creates new form principal
+     * Creates new form DashBoard
      */
     public principal() {
         initComponents();
+        ControladorPrincipal cdb = new ControladorPrincipal(this);
+        this.txt_recNo.setText("-1");
+        this.txt_id.setText(""+(Integer.parseInt(this.ilbd.getText())+1));
+        this.ilbd.setVisible(false);
+        this.txt_Nombre.requestFocus(true);
+        this.txt_Nombre.requestFocus(true);
     }
 
     /**
@@ -21,31 +31,136 @@ public class principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Exportar = new javax.swing.JFrame();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        textArea = new javax.swing.JTextArea();
+        jLabel6 = new javax.swing.JLabel();
+        txt_nombreArchivo = new javax.swing.JTextField();
+        btn_GuardarArchivo = new javax.swing.JButton();
+        btn_BuscarArchivos = new javax.swing.JButton();
+        btn_elinarArchivo = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        txt_recNo = new javax.swing.JTextField();
+        txt_id = new javax.swing.JTextField();
+        txt_Nombre = new javax.swing.JTextField();
+        btn_cancelar = new javax.swing.JButton();
+        btn_Aceptar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        txt_elemntos = new javax.swing.JTextArea();
+        tblElementos = new javax.swing.JTable();
+        ilbd = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        txt_masa = new javax.swing.JTextField();
+        txt_simbolo = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        txt_color = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        txt_numAtom = new javax.swing.JTextField();
+
+        Exportar.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        textArea.setColumns(20);
+        textArea.setRows(5);
+        jScrollPane2.setViewportView(textArea);
+
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 102, 530, 330));
+
+        jLabel6.setText("Nombre del Archivo: ");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 120, 30));
+        jPanel2.add(txt_nombreArchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 410, 40));
+
+        btn_GuardarArchivo.setText("Guardar");
+        jPanel2.add(btn_GuardarArchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 430, 120, 40));
+
+        btn_BuscarArchivos.setText("Buscar Archivo");
+        jPanel2.add(btn_BuscarArchivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 190, 40));
+
+        btn_elinarArchivo.setText("Elimnar");
+        jPanel2.add(btn_elinarArchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 120, 40));
+
+        javax.swing.GroupLayout ExportarLayout = new javax.swing.GroupLayout(Exportar.getContentPane());
+        Exportar.getContentPane().setLayout(ExportarLayout);
+        ExportarLayout.setHorizontalGroup(
+            ExportarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        ExportarLayout.setVerticalGroup(
+            ExportarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ExportarLayout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txt_elemntos.setColumns(20);
-        txt_elemntos.setRows(5);
-        jScrollPane1.setViewportView(txt_elemntos);
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(29, Short.MAX_VALUE))
-        );
+        jLabel1.setText("ID*: ");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, -1, -1));
+
+        jLabel2.setText("Nombre: ");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, -1, -1));
+
+        jLabel3.setText("recNo:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, -1, -1));
+        getContentPane().add(txt_recNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 100, -1));
+        getContentPane().add(txt_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 100, -1));
+        getContentPane().add(txt_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 100, -1));
+
+        btn_cancelar.setText("Cancelar");
+        getContentPane().add(btn_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 150, -1, -1));
+
+        btn_Aceptar.setText("Aceptar");
+        getContentPane().add(btn_Aceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 150, -1, -1));
+
+        tblElementos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "recNo", "ID", "Num. Atomico", "Nombre", "Masa Atomica", "Simbolo Quimico", "Color"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true, true, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tblElementos);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 192, 790, 271));
+        getContentPane().add(ilbd, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 73, 74, 22));
+
+        jLabel5.setText("Masa Atomica: ");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, -1, -1));
+
+        txt_masa.setText("0.0");
+        getContentPane().add(txt_masa, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, 80, -1));
+        getContentPane().add(txt_simbolo, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, 80, -1));
+
+        jLabel7.setText("Simbolo Atomico: ");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, -1, -1));
+        getContentPane().add(txt_color, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, 80, -1));
+
+        jLabel8.setText("Color:");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, -1, -1));
+
+        jLabel9.setText("Num. Atomico: ");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, -1, -1));
+
+        txt_numAtom.setText("0");
+        getContentPane().add(txt_numAtom, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 110, 80, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -76,6 +191,7 @@ public class principal extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -86,7 +202,34 @@ public class principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JFrame Exportar;
+    public javax.swing.JButton btn_Aceptar;
+    public javax.swing.JButton btn_BuscarArchivos;
+    public javax.swing.JButton btn_GuardarArchivo;
+    public javax.swing.JButton btn_cancelar;
+    public javax.swing.JButton btn_elinarArchivo;
+    public javax.swing.JLabel ilbd;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JTextArea txt_elemntos;
+    private javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JTable tblElementos;
+    public javax.swing.JTextArea textArea;
+    public javax.swing.JTextField txt_Nombre;
+    public javax.swing.JTextField txt_color;
+    public javax.swing.JTextField txt_id;
+    public javax.swing.JTextField txt_masa;
+    public javax.swing.JTextField txt_nombreArchivo;
+    public javax.swing.JTextField txt_numAtom;
+    public javax.swing.JTextField txt_recNo;
+    public javax.swing.JTextField txt_simbolo;
     // End of variables declaration//GEN-END:variables
 }
